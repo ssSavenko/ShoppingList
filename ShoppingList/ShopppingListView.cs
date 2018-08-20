@@ -19,7 +19,11 @@ namespace ShoppingList
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            ProductsList.Items.Remove(ProductsList.Items[ProductsList.SelectedIndex]);
+            if (ProductsList.SelectedItem.ToString() == NewItemName.Text.Trim())
+            {
+                AddButton.Enabled = true;
+            }
+            ProductsList.Items.Remove(ProductsList.Items[ProductsList.SelectedIndex]);        
         }
 
         private void NewItemName_TextChanged(object sender, EventArgs e)
