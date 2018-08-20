@@ -36,14 +36,7 @@ namespace ShoppingList
                     isItemInList = true;
                 }
             }
-            if (NewItemName.Text.Length > 0 && !isItemInList)
-            {
-                AddButton.Enabled = true;
-            }
-            else
-            {
-                AddButton.Enabled = false;
-            }
+            AddButton.Enabled = (NewItemName.Text.Length > 0 && !isItemInList);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -54,14 +47,7 @@ namespace ShoppingList
 
         private void ProductsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ProductsList.SelectedIndex >= 0)
-            {
-                DeleteButton.Enabled = true;
-            }
-            else
-            {
-                DeleteButton.Enabled = false;
-            }
+            DeleteButton.Enabled = (ProductsList.SelectedIndex >= 0);
         }
     }
 }
